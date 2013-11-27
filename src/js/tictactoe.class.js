@@ -139,7 +139,7 @@ var TicTacToe = {
 			System.consoleWriteMultiple(2, [
 				"============================",
 				"",
-				"Player ["+TicTacToe.stats.player1w+" : "+TicTacToe.stats.player2w+"] Computer",
+				"Player ["+TicTacToe.stats.player1w+" : "+TicTacToe.stats.player2w+"] Albatros (AI)",
 				"",
 				TicTacToe.stats.tiegames+" Tie Games: ",
 				"",
@@ -296,7 +296,7 @@ var TicTacToe = {
 							TicTacToe.albatros.calc = 0;
 							
 							calculatedField = TicTacToe.albatros.calculateField(1);
-							System.consoleWrite(1, "Checking Field ("+i+"/"+j+") eq. "+calculatedField+" [x"+TicTacToe.albatros.calc+"]");
+							System.consoleWrite(1, "Checking Field ( "+i+" | "+j+" ) eq. "+calculatedField+" [x"+TicTacToe.albatros.calc+"]");
 							TicTacToe.current.board[i][j] = TicTacToe.config.blank;
 							TicTacToe.current.blank++;
 							
@@ -323,11 +323,13 @@ var TicTacToe = {
 			}
 			
 			var etaEnd = new Date();
+			var endTme = etaEnd - etaStart;
 			System.consoleWriteMultiple(1, [
-				"Choosing Field ("+chooseI+"/"+chooseJ+")",
-				"Calculated turn in "+(etaEnd - etaStart)+"ms"
+				"Choosing Field ( "+chooseI+" | "+chooseJ+" )",
+				"Calculated turn in "+endTme+"ms, ETA "+((100-endTme)*-1)+"ms"
 			]);
 			
+			$("#tttf_")
 			TicTacToe.field.write(chooseI, chooseJ);
 			TicTacToe.turn.swap();
 		},
