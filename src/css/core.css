@@ -1,0 +1,141 @@
+/**
+ * Chrome elegant Tic Tac Toe application
+ * BUEP - Technische Berufsschule Zürich
+ *
+ * Code written and copyrighted 2013+ by Sven Marc Gehring
+ * Calculating and tactics designed   by Dario Duff
+ *
+ * Licensed under Creative Commons BY-NC-SA 3.0 license
+ * For additional information, please read the respective
+ * license deed at the Creative Commons website:
+ * >
+ */
+
+
+/* Scrollbars and typesettings */
+::-webkit-scrollbar             {width: 3px; background-color: #999999;}
+::-webkit-scrollbar-track       {border-radius: 1px;}
+::-webkit-scrollbar-thumb       {border-radius: 1px; background-color: #104E8B;}
+::-webkit-scrollbar-thumb:hover {border-radius: 1px; background-color: #104E8B;}
+
+
+/* Global definitions */
+* {font-family: Arial;}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background: url(../img/background.png) top center repeat #fff;
+}
+
+
+/* Close button */
+button {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	padding: 5px 8px;
+	background: none;
+	border: 1px solid #666;
+	border-width: 1px 0 0 1px;
+	-webkit-border-radius: 5px 0 0 0;
+	   -moz-border-radius: 5px 0 0 0;
+	        border-radius: 5px 0 0 0;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+
+/* System consoles and logfields */
+.systemconsole {
+	position: absolute;
+	width: 30%;
+	height: 35%;
+	padding: 35px 20px 20px 20px;
+	background: rgba(0,0,0,0.2);
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	color: #104E8B;
+}
+
+.systemconsole:before, #gamefieldcontainer:before {
+	position: absolute;
+	width: 100%;
+	height: 23px;
+	left: 0;
+	top: 0;
+	padding: 7px 0 0 0;
+	background: rgba(0,0,0,0.2);
+	text-align: center;
+	color: #333;
+}
+
+.systemconsole span {
+	display: block;
+}
+
+.logfield {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+#console1 {right: 5%; top: 3%;   }
+#console2 {right: 5%; bottom: 3%;}
+#console1:before {content: "System Terminal";}
+#console2:before {content: "Game Information";}
+
+
+/* Game field container and content */
+#gamefieldcontainer {
+	position: absolute;
+	left: 5%;
+	top: 3%;
+	width: 50%;
+	height: 94%;
+	background: rgba(0,0,0,0.2);
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
+#gamefieldcontainer:before {
+	content: "Simple Tic Tac Toe";
+}
+
+#gamedescription {
+	padding: 30px;
+	text-align: justify;
+	color: #555;
+}
+
+#gamefield {
+	width: 500px;
+	height: 500px;
+	margin: 40px auto 20px auto;
+}
+	
+	.tictactoefield {
+		display: inline-block;
+		vertical-align: middle;
+		width: 30%;
+		height: 30%;
+		font-size: 8.5em;
+		text-align: center;
+		font-weight: bold;
+		-webkit-border-radius: 2px;
+		   -moz-border-radius: 2px;
+		        border-radius: 2px;
+		box-shadow: inset 1px 1px 1px #666, inset -1px -1px 1px #666;
+		-webkit-box-shadow: inset 1px 1px 1px #666, inset -1px -1px 1px #666;
+	}
+	
+	.tictactoefield:hover         {cursor: pointer;}
+	.tictactoefield:nth-of-type(5){margin: 5%;     }
+	.tictactoefieldmid            {margin: 0 5%;   }
+	
+	.player_X {color: #EE7600; text-shadow: 0 0 2px #555;}
+	.player_O {color: #1874CD; text-shadow: 0 0 2px #555;}

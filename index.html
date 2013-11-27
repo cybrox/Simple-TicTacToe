@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+	
+		<link rel="shortcut icon" href="src/img/favicon.ico" type="image/x-icon" />
+		<link rel="icon" href="src/img/favicon.ico" type="image/x-icon" />
+		
+		<script type="text/javascript" src="src/js/lib/jquery.min.js"></script>
+		<script type="text/javascript" src="src/js/tictactoe.class.js"></script>
+		<script type="text/javascript" src="src/js/system.class.js"></script>
+		<script type="text/javascript" src="src/js/core.js"></script>
+	
+		<link rel="stylesheet" href="src/css/core.css" />
+	
+		<title>Tic Tac Toe</title>
+	
+	</head>
+	<body>
+	
+		<!-- Game field container for the game ant the user interface -->
+		<div id="gamefieldcontainer">
+			<div id="gamefield">
+			</div>
+			<p id="gamedescription">
+				<strong>Simple TicTacToe</strong><br />
+				Simple TicTacToe is a basic example game to show the functionality of the
+				Negamax algorithm using one of the simplest games ever created. Tic Tac Toe,
+				also known as X&amp;O's is a turn based mini-game where you can set your symbol
+				to one of the nine fields each turn trying to get three of them in a horizontal,
+				vertical or diagonal row.<br /><br />
+				<strong>The Minimax algorithm</strong></br>
+				Using the Minimax algorithm, the computer calculates every possible move to a specific
+				depth of the game tree and selects the best route. Knowing this also leads to the
+				main reason for us to choose Tic Tac Toe as an example since it's game-tree is small
+				enough to allow the computer to fully calculate every route and become completely invincible.<br /><br />
+				<strong>The Negamax algorithm</strong></br>
+				The Negamax algorith is a further development of the simple Minimax algorithm,
+				it's using so called <i>Alpha-Beta-Purning</i> to increase its speed. While the Minimax
+				algorithm calculates the complete route of a possible branch, the Negamax algorithm
+				will drop a branch as soon as it notices that it is even worse than the currently
+				chosen branch.
+			</p>
+		</div>
+	
+		<!-- System consoles and log elements to output information -->
+		<div class="systemconsole" id="console1"><div class="logfield" id="logfield1"></div></div>
+		<div class="systemconsole" id="console2"><div class="logfield" id="logfield2"></div>
+	
+		<button id="difficulty"><strong>Difficulty</strong> <span id="difftext">Easy</span></button>
+	
+	</body>
+</html>
