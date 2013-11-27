@@ -1,0 +1,13 @@
+# Phonegap Build generated files #
+ProjectSettings
+
+# System related stuff #
+ehthumbs.db
+Thumbs.db
+
+# Generated files #
+sig/img/*.png
+
+# Config #
+src/core/config.php
+sig/lib/config.php
