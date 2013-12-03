@@ -55,6 +55,25 @@ $(document).ready(function(){
 	
 	
 	/**
+	 * Register keypress listener
+	 */
+	$(document).keyup(function(event){
+		switch(event.which){
+			case 49: TicTacToe.turn.handle(0, 0); break;
+			case 50: TicTacToe.turn.handle(0, 1); break;
+			case 51: TicTacToe.turn.handle(0, 2); break;
+			case 52: TicTacToe.turn.handle(1, 0); break;
+			case 53: TicTacToe.turn.handle(1, 1); break;
+			case 54: TicTacToe.turn.handle(1, 2); break;
+			case 55: TicTacToe.turn.handle(2, 0); break;
+			case 56: TicTacToe.turn.handle(2, 1); break;
+			case 57: TicTacToe.turn.handle(2, 2); break;
+			default: break;
+		}
+	});
+	
+	
+	/**
 	 * Initialize game
 	 */
 	TicTacToe.game.initialize();
