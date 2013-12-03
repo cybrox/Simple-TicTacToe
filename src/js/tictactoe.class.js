@@ -66,8 +66,8 @@ var TicTacToe = {
 		reset: function(){
 			TicTacToe.stats.played++;
 			TicTacToe.field.clear();
-			TicTacToe.current.blank = 9;
 			TicTacToe.current.turn = TicTacToe.config.player1;
+			TicTacToe.current.blank = 9;
 			
 			for(i = 0; i < 3; i++){
 				for(j = 0; j < 3; j++){
@@ -126,7 +126,7 @@ var TicTacToe = {
 		/**
 		 * @name displayWin
 		 * @desc Output the win message to the console
-		 * @param {string} message - Win message to display
+		 * @param {string} message - Win message to display <Not used anymore since v1.0.2>
 		 */
 		displayWin: function(message){
 			System.consoleWriteMultiple(1, [
@@ -136,17 +136,7 @@ var TicTacToe = {
 			]);
 			
 			System.consoleClear(2);
-			System.consoleWriteMultiple(2, [
-				"============================",
-				"",
-				"Player ["+TicTacToe.stats.player1w+" : "+TicTacToe.stats.player2w+"] Albatros (AI)",
-				"",
-				TicTacToe.stats.tiegames+" Tie Games: ",
-				"",
-				"============================",
-				"This round: "+message,
-				"Starting round "+TicTacToe.stats.played+" good luck!"
-			]);
+			System.consoleWrite(2, "Player ["+TicTacToe.stats.player1w+" :: "+TicTacToe.stats.tiegames+" :: "+TicTacToe.stats.player2w+"] Albatros (AI)");
 		}
 	},
 	
@@ -270,9 +260,9 @@ var TicTacToe = {
 		playTurn: function(){
 			var etaStart = new Date();
 			
-			if(TicTacToe.albatros.diff == 1){	// Difficulty switch
+			System.consoleWrite(1, "--------------");
+			if(TicTacToe.albatros.diff == 1){
 				System.consoleWriteMultiple(1, [
-					"--------------",
 					"Initializing Albatros AI",
 					"Calculating best turn for "+TicTacToe.current.blank+" fields"
 				]);
@@ -311,6 +301,7 @@ var TicTacToe = {
 					}
 				}
 			} else {
+			
 				var maxProtection = 0;
 				
 				do {
@@ -376,8 +367,3 @@ var TicTacToe = {
 		}
 	}
 }
-
-/**
- * Initialize a new game
- */
-TicTacToe.game.initialize();

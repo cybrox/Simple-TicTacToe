@@ -137,5 +137,5 @@ button:hover {
 	.tictactoefield:nth-of-type(5){margin: 5%;     }
 	.tictactoefieldmid            {margin: 0 5%;   }
 	
-	.player_X {color: #EE7600; text-shadow: 0 0 2px #555;}
+	.player_X {color: #CD6600; text-shadow: 0 0 2px #555;}
 	.player_O {color: #1874CD; text-shadow: 0 0 2px #555;}
